@@ -5,11 +5,16 @@ using static PowerUp;
 
 public class ClashObstacles : MonoBehaviour
 {
-    bool hasPowerUp=false;
+    //bool hasPowerUp=false;
 
     public PowerUpType currentPowerUp = PowerUpType.None;
 
     private Coroutine powerUpCoroutine;
+    private void Update()
+    {
+      
+    }
+
     // va voi obstacles thi gameover
     private void OnCollisionEnter(Collision collision)
     {
@@ -20,15 +25,15 @@ public class ClashObstacles : MonoBehaviour
 
     }
 
+    // thuc hien powerup khi cham voi powertag
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(TagInGame.powerUpTag))
         { 
-            hasPowerUp = true;
+            //hasPowerUp = true;
             currentPowerUp = other.gameObject.GetComponent<PowerUp>().powerUpType;
 
-            Debug.Log("hien thi powerUP"+ currentPowerUp);
-
+           
             if (powerUpCoroutine != null)
             {
                 StopCoroutine(powerUpCoroutine);
@@ -39,14 +44,13 @@ public class ClashObstacles : MonoBehaviour
 
     }
 
+
+    //chuyen powerUtype be none
     IEnumerator PowerUpCountDown()
     {
         yield return new WaitForSeconds(2);
-        hasPowerUp = false;
+       // hasPowerUp = false;
         currentPowerUp = PowerUpType.None;
-
-        Debug.Log("hien thi powerUP" + currentPowerUp);
-
     }
 
 

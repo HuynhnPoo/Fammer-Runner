@@ -32,19 +32,17 @@ public class SpawnCoin : SpawnObject
         }
     }
 
-    // random vi tri X sinh ra coin
+    // ke thua method cua lop SpawnObject de tinh random vi tri X sinh ra coin
     public override Vector3 RandomPostion()
     {
-        float spawnPosX = minValueX + (RandomIndex() * spaceBetween);
-
-        return new Vector3(spawnPosX,this. transform.position.y, this.transform.position.z);
+       return base.RandomPostion();
     }
 
 
-    // radom index vi tri coin
+    // ke thua method cua lop SpawnObject de tinh  radom index vi tri coin
     public override int RandomIndex()
     {
-        return Random.Range(0, 3);
+       return base.RandomIndex();
     }
 
     

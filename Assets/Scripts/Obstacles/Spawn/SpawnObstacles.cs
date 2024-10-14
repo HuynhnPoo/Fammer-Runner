@@ -34,17 +34,15 @@ public class SpawnObstacles : SpawnObject
         }
     }
 
-    // tinh toan vi tri sinh ra 
+    // ke thua lop cha SpawnObject de tinh toan vi tri sinh ra 
     public override Vector3 RandomPostion()
     {
-        float spawnPosX = minValueX + (RandomIndex() * spaceBetween);
-
-        return new Vector3(spawnPosX,transform.position.y,transform.position.z);
+     return base.RandomPostion();
     }
 
-    // random index cua vat the
+    // ke thua lop SpawnObject de tinh random index cua vat the
     public override int RandomIndex()
     {
-       return Random.Range(0,2);
+       return base.RandomIndex();
     }
 }

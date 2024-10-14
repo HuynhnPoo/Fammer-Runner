@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Coin : MonoBehaviour, IPowerUp
 {
    
     int scoreCoin = 1;
@@ -26,13 +26,17 @@ public class Coin : MonoBehaviour
     }
 
 
-    IEnumerator DoubleCoin()
+    public IEnumerator DoubleCoin()
     {
         scoreCoin = 2;
+
         yield return new WaitForSeconds(5);
+
         scoreCoin = 1;
     }
 
-    
-
+    public void ActivePowerUp()
+    {
+        StartCoroutine(DoubleCoin());
+    }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Immortal : MonoBehaviour
+public class Immortal : MonoBehaviour, IPowerUp
 {
 
     private Rigidbody playerRb;
@@ -12,14 +12,24 @@ public class Immortal : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         playerBoxCollider = GetComponent<BoxCollider>();
+        
+    }
+    public void ActivePowerUp()
+    {
+        StartCoroutine(ImmortalActive());
     }
 
-    IEnumerator Immortalimplement()
+    public IEnumerator ImmortalActive ()
     {
-        playerBoxCollider.isTrigger = true; 
+        playerBoxCollider.isTrigger = true;
         playerRb.isKinematic = true;
+        Debug.Log(" hir thi ");
+
         yield return new WaitForSeconds(3);
+        Debug.Log(" hir thi wefwefwe");
+
         playerRb.isKinematic = false;
-        playerBoxCollider.isTrigger=false;
+        playerBoxCollider.isTrigger = false;
     }
+
 }
