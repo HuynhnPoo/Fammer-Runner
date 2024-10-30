@@ -4,8 +4,6 @@ using UnityEngine;
 using static PowerUp;
 public class PlayerPowerUp : MonoBehaviour
 {
-
-
     private ClashObstacles isPowerUp;
     private ActiveMagnet magnet;
 

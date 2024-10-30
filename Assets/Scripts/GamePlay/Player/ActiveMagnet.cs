@@ -26,6 +26,6 @@ public class ActiveMagnet : MonoBehaviour, IPowerUp
     {
         StartCoroutine(ActiveMagnetCoroutine());
 
-        Debug.Log(gameObject.name);
+        //Debug.Log(gameObject.name);
     }
 }

@@ -41,6 +41,6 @@ public class Coin : MonoBehaviour, IPowerUp
     public void ActivePowerUp()
     {
         StartCoroutine(DoubleCoin());
-        Debug.Log(gameObject.name);
+       // Debug.Log(gameObject.name);
     }
 }

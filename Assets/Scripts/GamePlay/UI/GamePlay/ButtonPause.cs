@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class ButtonPause : ButtonClick
 {
-    private bool isPaused=false;
+   
 
     public GameObject menuPause;
 
@@ -17,7 +18,7 @@ public class ButtonPause : ButtonClick
     {
         if (menuPause != null) return;
         menuPause = FindGameObjectByName("PanelOption");
-       
+
     }
 
     public static GameObject FindGameObjectByName(string name)
@@ -39,20 +40,22 @@ public class ButtonPause : ButtonClick
         ChangePaused();
     }
 
+    // ham pause game
     public void ChangePaused()
     {
-        if (!isPaused)
+        if (!GameManager.Instance.IsPaused)
         {
-            isPaused = true;
+            GameManager.Instance.IsPaused = true;
             menuPause.SetActive(true);
             Time.timeScale = 0;
+
         }
 
         else
         {
-            isPaused = false;
+            GameManager.Instance.IsPaused = false;
             menuPause.SetActive(false);
-            Time.timeScale = 1; 
+            Time.timeScale = 1;
         }
     }
 

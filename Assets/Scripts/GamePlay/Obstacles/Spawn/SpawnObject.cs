@@ -26,6 +26,6 @@ public abstract class SpawnObject : MonoBehaviour
     // random index cua vat the
     public virtual int RandomIndex()
     {
-        return Random.Range(0, 2);
+        return Random.Range(0, 3);
     }
 }

@@ -7,6 +7,7 @@ public abstract class ButtonClick : MonoBehaviour
 {
     [SerializeField] protected Button button;
     // Start is called before the first frame update
+   
     protected virtual void Start()
     {
         LoadButton();

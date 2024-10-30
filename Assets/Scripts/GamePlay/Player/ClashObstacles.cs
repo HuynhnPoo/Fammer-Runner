@@ -10,11 +10,22 @@ public class ClashObstacles : MonoBehaviour
 
     private Coroutine powerUpCoroutine;
 
+    private MuiscControll music;
+
+    private void OnEnable()
+    {
+        if (powerUpCoroutine == null)
+        {
+            music = GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag).GetComponent<MuiscControll>();
+        }
+    }
     // va voi obstacles thi gameover
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(TagInGame.obstaclesTag))
         {
+            music.PlayDeathAClip();
+
             GameManager.Instance.GameOver();
         }
 
