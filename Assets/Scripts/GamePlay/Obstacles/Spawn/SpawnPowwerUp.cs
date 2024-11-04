@@ -12,7 +12,6 @@ public class SpawnPowwerUp : SpawnObject
     // Start is called before the first frame update
     void Start()
     {
-
         AssignTime();
         InvokeRepeating(nameof(Spawn), timeStartSpawn, timeRepeatRate);
     }

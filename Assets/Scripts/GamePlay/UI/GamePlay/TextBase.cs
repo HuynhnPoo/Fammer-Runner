@@ -16,9 +16,4 @@ public class TextBase : MonoBehaviour
     {
         if (text == null) text = GetComponent<TextMeshProUGUI>();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

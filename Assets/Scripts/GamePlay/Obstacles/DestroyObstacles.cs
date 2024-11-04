@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyObstacles : MonoBehaviour
 {
 
-    // Update is called once per frame
+    // Update is called once per framek
     void Update()
     {
         Destroy();// thuc hien ham

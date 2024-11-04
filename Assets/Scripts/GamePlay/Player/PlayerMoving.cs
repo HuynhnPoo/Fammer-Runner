@@ -18,7 +18,7 @@ public class PlayerMoving : MonoBehaviour
 
     private void Start()
     {
-        targetPosition = transform.position;// khoi tao targetPosition bang vi tri ban dau
+        targetPosition =this.transform.position;// khoi tao targetPosition bang vi tri ban dau
     }
 
     private void Update()

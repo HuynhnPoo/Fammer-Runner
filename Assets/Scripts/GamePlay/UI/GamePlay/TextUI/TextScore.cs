@@ -9,6 +9,7 @@ public class TextScore : TextBase
     protected override void Start()
     {
         base.Start();
+        if (scoreKM == null)
         scoreKM = GameObject.FindObjectOfType<ScoreKM>().GetComponent<ScoreKM>();
     }
     // Update is called once per frame

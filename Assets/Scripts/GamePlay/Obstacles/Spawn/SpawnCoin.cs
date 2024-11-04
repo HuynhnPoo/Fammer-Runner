@@ -6,6 +6,7 @@ public class SpawnCoin : SpawnObject
 {
     private void Awake()
     {
+        if (holderObject != null) return;
         holderObject = GameObject.Find("SpawnCoin").GetComponent<Transform>();
     }
     // Start is called before the first frame update

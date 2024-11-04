@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ResumeButton : ButtonPause
 {
+
+    // ham thuc hien tiep tuc de choi game
     public override void OnClick()
     {
       if (GameManager.Instance.IsPaused) 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7534257741760655239}
   - component: {fileID: 1707851621081231967}
   - component: {fileID: 2556698392581044507}
+  - component: {fileID: 7482463071099599413}
   m_Layer: 0
   m_Name: RadiationIcon
   m_TagString: PowerUp
@@ -133,3 +134,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &7482463071099599413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdeaa4604129c940afd7f63eab8ac80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -5,12 +5,7 @@ using UnityEngine;
 public class MovingObjects : MonoBehaviour
 {
     public int speed;
-    private void Start()
-    {
-        
-       
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -19,6 +14,7 @@ public class MovingObjects : MonoBehaviour
        
     }
 
+    //di chuyen cac doi tuowng
    public void Moving() 
     {
         if (!GameManager.Instance.IsGameOver)

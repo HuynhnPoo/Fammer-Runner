@@ -10,13 +10,16 @@ public class ClashObstacles : MonoBehaviour
 
     private Coroutine powerUpCoroutine;
 
-    private MuiscControll music;
+    private MusicControl music;
+
+   // private BulletOfBoss bullet;
 
     private void OnEnable()
     {
-        if (powerUpCoroutine == null)
+        if (powerUpCoroutine == null )
         {
-            music = GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag).GetComponent<MuiscControll>();
+            music = GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag).GetComponent<MusicControl>();
+         //   bullet = GameObject.FindObjectOfType<BulletOfBoss>().GetComponent<BulletOfBoss>();
         }
     }
     // va voi obstacles thi gameover
@@ -26,7 +29,10 @@ public class ClashObstacles : MonoBehaviour
         {
             music.PlayDeathAClip();
 
+            //bullet.DisabledBoss();
             GameManager.Instance.GameOver();
+
+
         }
 
     }

@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class ScoreKM : MonoBehaviour
 {
-    public float score;
+    private float score;
     public float Score { get { return score; } }
 
-    public int stepScore = 1; // Tốc độ tăng điểm mỗi giây
-    private int limitDistance = 50;
-  
+    private int stepScore = 1; // Tốc độ tăng điểm mỗi giây
+    private int limitDistance = 5;
+
+    [SerializeField]private SpawnBoss spawnBoss;
+
+    [SerializeField]private DestroyBoss destroyBoss;
+
+    private void Start()
+    {
+        
+        if (spawnBoss == null) 
+        {
+            spawnBoss = GameObject.FindObjectOfType<SpawnBoss>();
+        }
+    }
 
     void Update()
     {
@@ -35,7 +47,23 @@ public class ScoreKM : MonoBehaviour
             limitDistance *= 2;
             stepScore += 3;
             GameManager.Instance.CurrentSpeed += 5;
+
+           StartCoroutine(SpwanBoss());
         }
+    }
+
+    IEnumerator SpwanBoss()
+    {
+        spawnBoss.Spawn();
+        yield return new WaitForSeconds(3);
+
+        if (destroyBoss == null)
+        {
+            destroyBoss = GameObject.FindObjectOfType<DestroyBoss>();
+        }
+
+        destroyBoss.DestroyBossSpawn();
+
     }
 
 }

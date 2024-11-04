@@ -2,29 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnObstacles : SpawnObject
+public class SpawnBoss : SpawnObject
 {
+   
     private void Awake()
     {
-        if (holderObject != null) return;
-        holderObject = GameObject.Find("SpawnObstacles").GetComponent<Transform>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        AssignTime();
-        InvokeRepeating(nameof(Spawn), timeStartSpawn, timeRepeatRate);
+        if ( holderObject != null) return;
+
+        holderObject = GameObject.Find("SpawnBoss").GetComponent<Transform>();
+
     }
 
-
-    // khoi thoi gian
-    void AssignTime()
-    {
-        timeStartSpawn = 2;
-        timeRepeatRate = 2;
-    }
-
-    // thuc hien spawn
+    // sinh ra boss
     public override void Spawn()
     {
         if (!GameManager.Instance.IsGameOver)
@@ -35,13 +24,17 @@ public class SpawnObstacles : SpawnObject
         }
     }
 
-    // ke thua lop cha SpawnObject de tinh toan vi tri sinh ra 
+    public void DisabledBoss()
+    {
+       
+    }
+    // ke thua method cua lop SpawnObject de tinh random vi tri X sinh ra coin
     public override Vector3 RandomPostion()
     {
         return base.RandomPostion();
     }
 
-    // ke thua lop SpawnObject de tinh random index cua vat the
+    // ke thua method cua lop SpawnObject de tinh  radom index vi tri coin
     public override int RandomIndex()
     {
         return base.RandomIndex();

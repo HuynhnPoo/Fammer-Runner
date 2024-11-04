@@ -14,8 +14,4 @@ public class Magnet : MonoBehaviour
             coinMoving.target = transform;
         }
     }
-
-
-
-
 }
