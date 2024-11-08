@@ -18,14 +18,10 @@ public class SpawnPowwerUp : SpawnObject
     // khoi thoi gian
     void AssignTime()
     {
-        timeStartSpawn = 2;
-        timeRepeatRate = 2;
+        timeStartSpawn = 10;
+        timeRepeatRate = 15;
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
     public override void Spawn()
     {
         if (!GameManager.Instance.IsGameOver)

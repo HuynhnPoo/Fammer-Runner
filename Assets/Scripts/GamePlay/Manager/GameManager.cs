@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
-        Debug.Log("hien thi game over"+ isGameOver);
     }
 
     // ham update them diem coi khi va cham

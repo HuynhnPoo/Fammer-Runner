@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 8339320757079014526}
   - component: {fileID: 1424634844360936422}
   - component: {fileID: 357764732619315684}
+  - component: {fileID: 3502316901919577775}
   m_Layer: 0
   m_Name: Animal_Fox_02
   m_TagString: Untagged
@@ -182,6 +183,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPool: {fileID: 0}
   bulletPos: {fileID: 627989084950279571}
+--- !u!114 &3502316901919577775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a401f8d5b3f6cd14abe9c20b8f3ef87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3998875282370387047
 GameObject:
   m_ObjectHideFlags: 0

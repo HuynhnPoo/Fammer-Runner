@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoopingGround : MonoBehaviour
 {
     private Vector3 startPos;
-    private int repeatWidth=40;
+    private int repeatWidth = 40;
     // Start is called before the first frame update
     void Start()
     {

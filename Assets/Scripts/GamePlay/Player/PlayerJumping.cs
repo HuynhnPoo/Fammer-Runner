@@ -5,20 +5,18 @@ using UnityEngine;
 public class PlayerJumping : MonoBehaviour
 {
 
-    [SerializeField] private float gravityModifier =2.5f;
-    [SerializeField] private float jumpHeight = 5;
+    [SerializeField] private float gravityModifier = -9.8f;
+    [SerializeField] private float jumpHeight = 3;
     [SerializeField] private LayerMask maskGround;
-    
-    
-    private Transform groundCheck;
-     private MusicControl music;
-    private Rigidbody rbPlayer;
-    // Start is called before the first frame update
-    void Start()
-    {
-         
-    }
 
+
+    private Transform groundCheck;
+    private MusicControl music;
+    private Rigidbody rbPlayer;
+
+
+
+    // Start is called before the first frame update
     private void OnEnable()
     {
         LoadComponment();
@@ -26,13 +24,12 @@ public class PlayerJumping : MonoBehaviour
 
     void LoadComponment()
     {
-
         if (rbPlayer != null && groundCheck != null && music != null) return;
 
-        Physics.gravity *= gravityModifier;
+
         rbPlayer = GetComponent<Rigidbody>();
         groundCheck = GameObject.Find("Check_Ground").GetComponent<Transform>();
-        music =GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag).GetComponent<MusicControl>();
+        music = GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag).GetComponent<MusicControl>();
     }
     // Update is called once per frame
     private void FixedUpdate()
@@ -45,12 +42,15 @@ public class PlayerJumping : MonoBehaviour
     {
         if (Input.GetButton("Jump") && IsCheckGrounded())
         {
-           
-            rbPlayer.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-            music.PlayJumpAClip(); 
-           
+
+            rbPlayer.velocity = Vector3.up * Mathf.Sqrt(jumpHeight * -2 * gravityModifier);
+            // rbPlayer.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            music.PlayJumpAClip();
+
         }
 
+        else if (rbPlayer.velocity.y < -1 && IsCheckGrounded()) { rbPlayer.velocity = Vector3.zero; }
+        rbPlayer.velocity +=Vector3.up * gravityModifier *3 * Time.deltaTime ;
     }
 
     //ham kiem tra nhan vat co o tren ground hay khong

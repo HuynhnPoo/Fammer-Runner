@@ -9,9 +9,7 @@ public class MovingObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
         Moving();
-       
     }
 
     //di chuyen cac doi tuowng

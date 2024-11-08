@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class SpawnBoss : SpawnObject
 {
-   
+
     private void Awake()
     {
-        if ( holderObject != null) return;
+        LoadHoler();
+    }
+
+    void LoadHoler()
+    {
+        if (holderObject != null) return;
 
         holderObject = GameObject.Find("SpawnBoss").GetComponent<Transform>();
 
     }
-
     // sinh ra boss
     public override void Spawn()
     {
@@ -24,10 +28,7 @@ public class SpawnBoss : SpawnObject
         }
     }
 
-    public void DisabledBoss()
-    {
-       
-    }
+
     // ke thua method cua lop SpawnObject de tinh random vi tri X sinh ra coin
     public override Vector3 RandomPostion()
     {

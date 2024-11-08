@@ -16,10 +16,14 @@ public class ClashObstacles : MonoBehaviour
 
     private void OnEnable()
     {
-        if (powerUpCoroutine == null )
+        LoadMuisc();
+    }
+
+    void LoadMuisc()
+    {
+        if (music == null)
         {
             music = GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag).GetComponent<MusicControl>();
-         //   bullet = GameObject.FindObjectOfType<BulletOfBoss>().GetComponent<BulletOfBoss>();
         }
     }
     // va voi obstacles thi gameover

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FindGameObjectByNameHide
 {
-    
+    //ham tim cac gameobject bang ten o hierachy bi an di
     public static GameObject FindGameObjectByName(string name)
     {
         Transform[] transforms = Resources.FindObjectsOfTypeAll<Transform>();

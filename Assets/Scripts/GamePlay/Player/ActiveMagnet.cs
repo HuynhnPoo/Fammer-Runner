@@ -11,7 +11,7 @@ public class ActiveMagnet : MonoBehaviour, IPowerUp
         time = GameManager.Instance.TimeCountDown;
     }
 
-
+    //thuc hien bat bat nam cham
     public IEnumerator ActiveMagnetCoroutine()
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
@@ -22,10 +22,11 @@ public class ActiveMagnet : MonoBehaviour, IPowerUp
 
     }
 
+
+    //ham dung interface bat powerup nam cham 
     public void ActivePowerUp()
     {
         StartCoroutine(ActiveMagnetCoroutine());
 
-        //Debug.Log(gameObject.name);
     }
 }

@@ -8,16 +8,15 @@ public class ScoreKM : MonoBehaviour
     public float Score { get { return score; } }
 
     private int stepScore = 1; // Tốc độ tăng điểm mỗi giây
-    private int limitDistance = 5;
+    private int limitDistance = 60;
 
-    [SerializeField]private SpawnBoss spawnBoss;
+    [SerializeField] private SpawnBoss spawnBoss;
 
-    [SerializeField]private DestroyBoss destroyBoss;
+    [SerializeField] private DestroyBoss destroyBoss;
 
     private void Start()
     {
-        
-        if (spawnBoss == null) 
+        if (spawnBoss == null)
         {
             spawnBoss = GameObject.FindObjectOfType<SpawnBoss>();
         }
@@ -29,13 +28,15 @@ public class ScoreKM : MonoBehaviour
         ChangeStepAndSpeed();
     }
 
+
+    //khang cach nhan vat da di
     void DistanceTraveled()
     {
 
-        if(!GameManager.Instance.IsGameOver)
-        score += stepScore * Time.deltaTime;// Tăng điểm số theo thời gian
+        if (!GameManager.Instance.IsGameOver)
+            score += stepScore * Time.deltaTime;// Tăng điểm số theo thời gian
         score = Mathf.Round(score * 100f) / 100f; // Làm tròn điểm số đến 2 chữ số thập phân để hiển thị
-       
+
     }
 
     // ham thay stepscore
@@ -48,10 +49,12 @@ public class ScoreKM : MonoBehaviour
             stepScore += 3;
             GameManager.Instance.CurrentSpeed += 5;
 
-           StartCoroutine(SpwanBoss());
+            StartCoroutine(SpwanBoss());
         }
     }
 
+
+    //tao ra boss
     IEnumerator SpwanBoss()
     {
         spawnBoss.Spawn();
