@@ -3,18 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderBase : MonoBehaviour
+
+public abstract class SliderBase : MonoBehaviour
 {
-    protected Slider slider;
+   [SerializeField] protected Slider slider;
     // Start is called before the first frame update
-   protected virtual void Start()
+     protected virtual void Start()
     {
-        
+        LoadSlider();
+        this.AddChangeEvent();
     }
 
-    // Update is called once per frame
-    void Update()
+   
+    void LoadSlider()
     {
-        
+        if (this.slider != null) return;
+        this.slider = GetComponent<Slider>();
     }
+
+    protected void AddChangeEvent()
+    {
+        this.slider.onValueChanged.AddListener(this.OnChange);
+    }
+
+    protected abstract void OnChange(float value);
+
+   
 }

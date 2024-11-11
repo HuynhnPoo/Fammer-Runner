@@ -8,7 +8,7 @@ public class ScoreKM : MonoBehaviour
     public float Score { get { return score; } }
 
     private int stepScore = 1; // Tốc độ tăng điểm mỗi giây
-    private int limitDistance = 60;
+    private int limitDistance = 40;
 
     [SerializeField] private SpawnBoss spawnBoss;
 
@@ -46,7 +46,7 @@ public class ScoreKM : MonoBehaviour
         if (limitDistance < score)
         {
             limitDistance *= 2;
-            stepScore += 3;
+            stepScore += 2;
             GameManager.Instance.CurrentSpeed += 5;
 
             StartCoroutine(SpwanBoss());
@@ -58,8 +58,8 @@ public class ScoreKM : MonoBehaviour
     IEnumerator SpwanBoss()
     {
         spawnBoss.Spawn();
-        yield return new WaitForSeconds(3);
 
+        yield return new WaitForSeconds(5);
         if (destroyBoss == null)
         {
             destroyBoss = GameObject.FindObjectOfType<DestroyBoss>();

@@ -6,7 +6,6 @@ using UnityEngine;
 public class ButtonPause : ButtonClick
 {
 
-
     public GameObject menuPause;
 
     private void OnEnable()

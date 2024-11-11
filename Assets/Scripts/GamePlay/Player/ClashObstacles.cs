@@ -12,6 +12,8 @@ public class ClashObstacles : MonoBehaviour
 
     private MusicControl music;
 
+    private GameOver gameOverUI;
+
    // private BulletOfBoss bullet;
 
     private void OnEnable()
@@ -21,9 +23,10 @@ public class ClashObstacles : MonoBehaviour
 
     void LoadMuisc()
     {
-        if (music == null)
+        if (music == null && gameOverUI ==null)
         {
             music = GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag).GetComponent<MusicControl>();
+            gameOverUI=GameObject.FindObjectOfType<GameOver>().GetComponent<GameOver>();
         }
     }
     // va voi obstacles thi gameover
@@ -35,7 +38,7 @@ public class ClashObstacles : MonoBehaviour
 
             //bullet.DisabledBoss();
             GameManager.Instance.GameOver();
-
+            gameOverUI.ActiveGameOver();
 
         }
 

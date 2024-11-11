@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MovingBoss : MonoBehaviour
 {
-    private float speed = 6;
+    private float speed = 5;
     private bool moveRight = true;
 
     private void FixedUpdate()
     {
+        if (!GameManager.Instance.IsGameOver) return;
         Move();
         CheckPosX();    
     }

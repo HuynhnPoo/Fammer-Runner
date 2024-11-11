@@ -4,27 +4,24 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-   [SerializeField] private GameObject gameOver;
+    [SerializeField] private GameObject gameOver;
+    public ParticleSystem particleGameOver;
+    public Transform particlePos;
+
+
 
     // Start is called before the first frame update
 
     private void Awake()
     {
-        gameOver = FindGameObjectByNameHide.FindGameObjectByName(TagInGame.gameOverTag); 
-        
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        ActiveGameOver();
+        gameOver = FindGameObjectByNameHide.FindGameObjectByName(TagInGame.gameOverTag);
+
     }
 
     //neu game se bat giao dien  game over
-    void ActiveGameOver()
+    public void ActiveGameOver()
     {
-        if (GameManager.Instance.IsGameOver)
-        {
-            gameOver.SetActive(true);
-        }
+        gameOver.SetActive(true);
+        Instantiate(particleGameOver, particlePos.position, particlePos.rotation);
     }
 }

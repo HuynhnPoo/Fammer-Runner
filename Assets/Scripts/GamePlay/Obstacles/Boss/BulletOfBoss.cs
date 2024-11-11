@@ -20,7 +20,7 @@ public class BulletOfBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(SpawnBullet),1,1);
+        InvokeRepeating(nameof(SpawnBullet),1,0.5f);
     }
 
     //ham su ly khi sinh ra dan
@@ -28,7 +28,7 @@ public class BulletOfBoss : MonoBehaviour
     {
         GameObject bullet = bulletPool.GetOjectPool();
         bullet.transform.position = bulletPos.transform.position;
-        bullet.transform.rotation  = Quaternion.Euler(0,0,0) ;
+        bullet.transform.rotation  = Quaternion.Euler(0,0,0);
 
     }
 
