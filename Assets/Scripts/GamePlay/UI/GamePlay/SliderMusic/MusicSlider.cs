@@ -13,7 +13,7 @@ public class MusicSlider : SliderBase
         base.Start();
 
         if (music != null) return;
-        music =GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag). GetComponent<AudioSource>();
+        music = GameObject.FindAnyObjectByType<MusicBase>().GetComponent<AudioSource>();
 
         slider.value=music.volume;
     }

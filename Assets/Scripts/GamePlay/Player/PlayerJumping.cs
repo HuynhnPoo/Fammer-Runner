@@ -11,15 +11,15 @@ public class PlayerJumping : MonoBehaviour
 
 
     private Transform groundCheck;
-    private MusicControl music;
+    private MusicEffect music;
     private Rigidbody rbPlayer;
 
 
-
     // Start is called before the first frame update
-    private void OnEnable()
+    private void Awake()
     {
         LoadComponment();
+        
     }
 
     void LoadComponment()
@@ -29,7 +29,7 @@ public class PlayerJumping : MonoBehaviour
 
         rbPlayer = GetComponent<Rigidbody>();
         groundCheck = GameObject.Find("Check_Ground").GetComponent<Transform>();
-        music = GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag).GetComponent<MusicControl>();
+        music = GameObject.FindAnyObjectByType<MusicEffect>().GetComponent<MusicEffect>();
     }
     // Update is called once per frame
     private void FixedUpdate()
@@ -42,9 +42,9 @@ public class PlayerJumping : MonoBehaviour
     {
         if (Input.GetButton("Jump") && IsCheckGrounded())
         {
-
-            rbPlayer.velocity = Vector3.up * Mathf.Sqrt(jumpHeight * -2 * gravityModifier);
-            // rbPlayer.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            IsCheckGrounded();
+           // rbPlayer.velocity = Vector3.up * Mathf.Sqrt(jumpHeight * -2 * gravityModifier);
+             rbPlayer.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             music.PlayJumpAClip();
 
         }

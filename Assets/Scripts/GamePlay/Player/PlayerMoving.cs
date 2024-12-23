@@ -6,13 +6,13 @@ public class PlayerMoving : MonoBehaviour
 {
 
     private float laneWidth = 10f;
-    private float Speed = 15f; 
-    private float inputHold = 0.2f; 
+    private float Speed = 15f;
+    private float inputHold = 0.2f;
 
     private bool isMoving = false;
     private Vector3 targetPosition; 
 
-    private float horizontal;
+   private float horizontal;
 
     private int distancePosX = 18;
 
@@ -74,17 +74,21 @@ public class PlayerMoving : MonoBehaviour
     // kiem tra vi tri nhan vat co di qua truc x hay khong
     void DistamcePosX()
     {
+
+        int posX = 10;
+
         if (transform.position.x > distancePosX)
         {
             isMoving = false;
-            transform.position = new Vector3(10, this.transform.position.y, this.transform.position.z);
+            transform.position = new Vector3(posX, this.transform.position.y, this.transform.position.z);
+            targetPosition.x = posX;
         }
 
         else if (transform.position.x < -distancePosX)
         {
             isMoving = false;
-            transform.position = new Vector3(-10, this.transform.position.y, this.transform.position.z);
-
+            transform.position = new Vector3(-posX, this.transform.position.y, this.transform.position.z);
+            targetPosition.x =-posX;
         }
 
     }

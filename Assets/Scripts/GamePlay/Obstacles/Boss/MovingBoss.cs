@@ -9,7 +9,7 @@ public class MovingBoss : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!GameManager.Instance.IsGameOver) return;
+        if (GameManager.Instance.IsGameOver) return;
         Move();
         CheckPosX();    
     }

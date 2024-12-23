@@ -10,7 +10,7 @@ public class ClashObstacles : MonoBehaviour
 
     private Coroutine powerUpCoroutine;
 
-    private MusicControl music;
+    private MusicEffect music;
 
     private GameOver gameOverUI;
 
@@ -25,7 +25,7 @@ public class ClashObstacles : MonoBehaviour
     {
         if (music == null && gameOverUI ==null)
         {
-            music = GameObject.FindGameObjectWithTag(TagInGame.MainCameraTag).GetComponent<MusicControl>();
+            music = GameObject.FindAnyObjectByType<MusicEffect>().GetComponent<MusicEffect>();
             gameOverUI=GameObject.FindObjectOfType<GameOver>().GetComponent<GameOver>();
         }
     }

@@ -29,7 +29,8 @@ public class SpawnObstacles : SpawnObject
     {
         if (!GameManager.Instance.IsGameOver)
         {
-            GameObject obstacles = Instantiate(objectPrefabs[RandomIndex()], RandomPostion(), objectPrefabs[RandomIndex()].transform.rotation);
+            int index = Random.Range(0,4);
+            GameObject obstacles = Instantiate(objectPrefabs[index], RandomPostion(), objectPrefabs[index].transform.rotation);
 
             obstacles.transform.parent = holderObject;// giu ostacles trong holder
         }
