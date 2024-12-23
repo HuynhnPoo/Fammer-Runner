@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,13 +44,19 @@ public class PlayerJumping : MonoBehaviour
         {
             IsCheckGrounded();
            // rbPlayer.velocity = Vector3.up * Mathf.Sqrt(jumpHeight * -2 * gravityModifier);
-             rbPlayer.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            rbPlayer.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             music.PlayJumpAClip();
 
         }
 
         else if (rbPlayer.velocity.y < -1 && IsCheckGrounded()) { rbPlayer.velocity = Vector3.zero; }
-        rbPlayer.velocity +=Vector3.up * gravityModifier *3 * Time.deltaTime ;
+        
+        // Áp dụng trọng lực
+        if (!rbPlayer.isKinematic)
+        {
+            rbPlayer.velocity += Vector3.up * gravityModifier * Time.deltaTime;
+        }
+
     }
 
     //ham kiem tra nhan vat co o tren ground hay khong
