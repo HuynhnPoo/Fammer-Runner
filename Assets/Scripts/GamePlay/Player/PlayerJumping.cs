@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerJumping : MonoBehaviour
 {
 
-    [SerializeField] private float gravityModifier = -9.8f;
-    [SerializeField] private float jumpHeight = 3;
+    [SerializeField] private float gravityModifier = -15;
+    [SerializeField] private float jumpHeight = 5;
     [SerializeField] private LayerMask maskGround;
 
 
@@ -40,7 +40,7 @@ public class PlayerJumping : MonoBehaviour
     // ham lafm cho nhan vat nhay
     public void Jumping()
     {
-        if (Input.GetButton("Jump") && IsCheckGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && IsCheckGrounded())
         {
             IsCheckGrounded();
            // rbPlayer.velocity = Vector3.up * Mathf.Sqrt(jumpHeight * -2 * gravityModifier);
@@ -54,7 +54,7 @@ public class PlayerJumping : MonoBehaviour
         // Áp dụng trọng lực
         if (!rbPlayer.isKinematic)
         {
-            rbPlayer.velocity += Vector3.up * gravityModifier * Time.deltaTime;
+            rbPlayer.velocity += Vector3.up * gravityModifier *Time.deltaTime ;
         }
 
     }

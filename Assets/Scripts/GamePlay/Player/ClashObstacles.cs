@@ -76,7 +76,7 @@ public class ClashObstacles : MonoBehaviour
     //chuyen powerUtype be none
     IEnumerator PowerUpCountDown()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
        // hasPowerUp = false;
         currentPowerUp = PowerUpType.None;
     }
