@@ -34,7 +34,7 @@ public class ClashObstacles : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(TagInGame.obstaclesTag))
         {
-            music.PlayDeathAClip();
+          //  music.PlayDeathAClip();
 
             //bullet.DisabledBoss();
             GameManager.Instance.GameOver();

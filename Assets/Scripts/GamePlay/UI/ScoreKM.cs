@@ -8,7 +8,7 @@ public class ScoreKM : MonoBehaviour
     public float Score { get { return score; } }
 
     private int stepScore = 1; // Tốc độ tăng điểm mỗi giây
-    private int limitDistance = 40;
+    private int limitDistance = 50;
 
     [SerializeField] private SpawnBoss spawnBoss;
 

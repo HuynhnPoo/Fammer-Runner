@@ -45,7 +45,7 @@ public class PlayerJumping : MonoBehaviour
             IsCheckGrounded();
            // rbPlayer.velocity = Vector3.up * Mathf.Sqrt(jumpHeight * -2 * gravityModifier);
             rbPlayer.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-            music.PlayJumpAClip();
+          //  music.PlayJumpAClip();
 
         }
 

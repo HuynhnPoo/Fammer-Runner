@@ -11,8 +11,6 @@ public class ButtonGuide : ButtonClick
     protected override void Start()
     {
         base.Start();
-
-        menuGuide = transform.GetChild(1).gameObject;
     }
 
     //ham hien thi menu huong dan

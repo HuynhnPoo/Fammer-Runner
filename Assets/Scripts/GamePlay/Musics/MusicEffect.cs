@@ -10,9 +10,9 @@ public class MusicEffect : MusicBase
    
 
     // khi nhay se bat am thanh
-     public void PlayJumpAClip() 
+    public void PlayJumpAClip() 
     {
-        audioSource.PlayOneShot(jumpAClip,1);
+        audioSource.PlayOneShot(jumpAClip);
     }
     // khi chet se bat am thanh
     public void PlayDeathAClip() 
