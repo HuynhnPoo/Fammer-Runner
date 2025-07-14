@@ -40,12 +40,13 @@ public class PlayerJumping : MonoBehaviour
     // ham lafm cho nhan vat nhay
     public void Jumping()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsCheckGrounded())
-        {
             IsCheckGrounded();
+        if (Input.GetKey(KeyCode.Space) && IsCheckGrounded())
+        {
+            Debug.Log("hien thi ra  nhay cua nhan vât");
            // rbPlayer.velocity = Vector3.up * Mathf.Sqrt(jumpHeight * -2 * gravityModifier);
             rbPlayer.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-          //  music.PlayJumpAClip();
+            music.PlayJumpAClip();
 
         }
 
